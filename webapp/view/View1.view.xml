@@ -1,0 +1,20 @@
+<mvc:View
+    controllerName="sample.project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:cr="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <Input
+            value="guna"
+            description="Hello {/recipient/name}"
+            width="60%"
+        />
+
+     
+    </Page>
+</mvc:View>
