@@ -5,7 +5,8 @@ sap.ui.define([
 
   return BaseController.extend("sample.project1.controller.App", {
       onInit() {
-        console.log("test")
+        console.log("test");
+        
       }
   });
 });
