@@ -1,0 +1,15 @@
+{
+     "name": "ted",
+     "AddressInfo":[
+        {
+            "Name":"Gunalan",
+            "Street":"Brookfield",
+            "ZIPCode":"630306"
+        },
+               {
+            "Name":"Guna",
+            "Street":"Brookfield",
+            "ZIPCode":"630306"
+        }
+     ]
+}

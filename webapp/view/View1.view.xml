@@ -9,12 +9,89 @@
         id="page"
         title="{i18n>title}"
     >
-        <Input
-            value="guna"
-            description="Hello {/recipient/name}"
-            width="60%"
+        <f:SimpleForm
+            id="SimpleFormDisplay354"
+            editable="false"
+            layout="ResponsiveGridLayout"
+            title="Address"
+            singleContainerFullSize="false"
+        >
+            <f:content>
+                <Label text="Name" />
+                <Input
+                    id="nameText"
+                    value="{manifestModel>/SupplierName}"
+                />
+                <Label text="Street/No." />
+                <Input value="{manifestModel>/Street}" />
+                <Label text="ZIP Code/City" />
+                <Input value="{manifestModel>/ZIPCode}" />
+                <Label text="Country" />
+                <Input
+                    id="countryText"
+                    value="{manifestModel>/Country}"
+                />
+            </f:content>
+        </f:SimpleForm>
+
+        <Button
+            text="Submit"
+            press="onPress"
         />
 
-     
+        <Table id="tableAddress"  items="{
+			path: 'manifestModel>/AddressInfo',
+            	sorter: {
+				path: 'Name'
+			}
+		}">
+            <headerToolbar>
+                <OverflowToolbar>
+                    <Title
+                        text="Products"
+                        level="H2"
+                    />
+                    <ToolbarSpacer />
+                    <CheckBox
+                        text="Fixed Layout"
+                        selected="true"
+                        select="onCheckBoxSelect"
+                    />
+                    <Button
+                        text="Open Dialog"
+                        press="onOpenPressed"
+                    />
+                </OverflowToolbar>
+            </headerToolbar>
+            <columns>
+                <Column>
+                    <Text text="Name" />
+                </Column>
+                <Column>
+                    <Text text="Street" />
+                </Column>
+                <Column>
+                    <Text text="ZIPCode" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem
+                    vAlign="Middle"
+                    type="Navigation"
+                >
+                    <cells>
+                        <Text
+                            text="{manifestModel>Name}"
+                            wrapping="false"
+                        />
+                        <Text
+                            text="{manifestModel>Street}"
+                            wrapping="false"
+                        />
+                        <Text text="{manifestModel>ZIPCode}" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
     </Page>
 </mvc:View>
